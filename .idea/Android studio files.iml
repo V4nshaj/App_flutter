@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/i_am_rich/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_rich/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_rich/build" />
+      <excludeFolder url="file://$MODULE_DIR$/i_rich/build" />
+      <excludeFolder url="file://$MODULE_DIR$/i_rich/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/i_rich/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/i_rich_2/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/i_rich_2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/i_rich_2/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/bmi-calculator-flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/bmi-calculator-flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/bmi-calculator-flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/mi_card_flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/mi_card_flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/mi_card_flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Clima/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/Clima/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/Clima/build" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_poor/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_poor/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/i_am_poor/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_App/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_App/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_App/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/i_poor2/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/i_poor2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/i_poor2/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/row_container/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/row_container/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/row_container/build" />
+      <excludeFolder url="file://$MODULE_DIR$/navigation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/navigation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/navigation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/scafold_intr/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/scafold_intr/build" />
+      <excludeFolder url="file://$MODULE_DIR$/scafold_intr/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/xylophone-flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/xylophone-flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/xylophone-flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/i_poor/build" />
+      <excludeFolder url="file://$MODULE_DIR$/i_poor/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/i_poor/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/quizzler-flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/quizzler-flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/quizzler-flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/container2/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/container2/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/container2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/magic-8-ball-flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/magic-8-ball-flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/magic-8-ball-flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dicee-flutter/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dicee-flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dicee-flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/login_card/build" />
+      <excludeFolder url="file://$MODULE_DIR$/login_card/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/login_card/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/destini-challenge-starting/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/destini-challenge-starting/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/destini-challenge-starting/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
