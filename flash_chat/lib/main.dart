@@ -11,11 +11,6 @@ class FlashChat extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        textTheme: TextTheme(
-          bodySmall: TextStyle(color: Colors.black54),
-        ),
-      ),
       //welcomeScreen.id associate with Welcomescreen as string name can be misspelled but id never changes
       initialRoute: WelcomeScreen
           .id, //initial route is defined as / bcz home is not consider if inital route is defined

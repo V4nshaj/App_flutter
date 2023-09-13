@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "869323765274",
+    "project_id": "flash-chat-1321a",
+    "storage_bucket": "flash-chat-1321a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869323765274:android:ca92bd69a4ba7fe9d943a3",
+        "android_client_info": {
+          "package_name": "com.vanshaj.flash_chat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbm_5wSb_93LHxz7JzhiqYYZsr-t5BZgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
