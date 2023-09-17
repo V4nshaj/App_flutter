@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flash_chat/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_chat/constants.dart';
@@ -18,6 +20,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     super.initState();
+
     getCurrentUser();
   }
 
@@ -76,6 +79,37 @@ class _ChatScreenState extends State<ChatScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            //stream helps display snapshot of messages in column
+            StreamBuilder<QuerySnapshot>(
+              //declaring StreamBuilder as QuerySnapshot
+              //alaways declare any function beforehand
+              stream: _firestore.collection('Messages').snapshots(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: CircularProgressIndicator(
+                        backgroundColor: Colors.lightBlueAccent),
+                  );
+                }
+                final messages =
+                    snapshot.data!.docs; //to access the data in async
+                //async from steambuilder contains QuerySnapshot, QuerySnapshot contains document list
+                List<Text> msgWidgets =
+                    []; //List widget to hold the sender name and text
+                for (var message1 in messages) {
+                  var message = message1.data()
+                      as Map<String, dynamic>; //typecasting object to String
+                  //1st part is string and second part any data type
+                  final messageText = message['text'];
+                  final messageSender = message['sender'];
+                  final msgWidget = Text('$messageText from $messageSender');
+                  msgWidgets.add(msgWidget);
+                }
+                return Column(
+                  children: msgWidgets,
+                );
+              },
+            ),
             Container(
               decoration: kMessageContainerDecoration,
               child: Row(
