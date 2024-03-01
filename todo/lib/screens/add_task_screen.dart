@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/widgets/add_button.dart';
 //stateless: full widget rerender, statefull:only renders
 
 class AddTaskScreen extends StatefulWidget {
@@ -7,25 +8,37 @@ class AddTaskScreen extends StatefulWidget {
 }
 
 class _AddTaskScreenState extends State<AddTaskScreen> {
-  final controller1 = TextEditingController(); //controller for
+  List<String> tasks = [];
+  final taskController = TextEditingController(); //controller for
   @override
   void initState() {
     //state is called at the beginnning
     super.initState();
-    /*controller1.addListener(
+    /*taskController.addListener(
       //to take userinput
       () {
-        print(controller1.text);
+        print(taskController.text);
       },
     );*/
     print("init state called");
+  }
+
+  void addTask() {
+    String newTask = taskController.text; // Get the entered text
+    if (newTask.isNotEmpty) {
+      // Check if the text is not empty
+      setState(() {
+        tasks.add(newTask); // Add the task to the list
+        taskController.clear(); // Clear the text field
+      });
+    }
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    // controller1.dispose();
+    // taskController.dispose();
     print("Dispose callled");
   }
 
@@ -52,7 +65,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   autofocus:
                       true, //as soon as the taskfield opens it opens the keyboard without clicking on the textfield
                   textAlign: TextAlign.center,
-                  controller: controller1,
+                  controller: taskController,
                   decoration: InputDecoration(
                       enabledBorder: const UnderlineInputBorder(
                         borderSide: const BorderSide(
@@ -72,26 +85,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               SizedBox(
                 height: 50.0,
               ),
-              InkWell(
-                //creates clickable areas i.e increases to touch area
-                onTap: () {},
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      0.8, //screen size 80 % width
-                  padding: EdgeInsets.symmetric(vertical: 20.0),
-                  color: Colors.lightBlueAccent,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Add',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 20.0),
-                      ),
-                    ],
-                  ),
-                ),
-              )
+              add_button(),
             ],
           )),
     );
