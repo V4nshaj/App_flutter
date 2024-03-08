@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "339936079670",
+    "project_id": "water-level-e63b0",
+    "storage_bucket": "water-level-e63b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339936079670:android:605bd740169f52325ccd97",
+        "android_client_info": {
+          "package_name": "com.example.aqua_trail"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCP7ODr2xpyEHVr04NRuW4krQ-6mkzVR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

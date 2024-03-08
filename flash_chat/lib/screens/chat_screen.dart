@@ -138,6 +138,7 @@ class MessageStream extends StatelessWidget {
   Widget build(BuildContext context) {
     return //stream helps display snapshot of messages in column
         StreamBuilder<QuerySnapshot>(
+      //updates value contantly
       //declaring StreamBuilder as QuerySnapshot
       //alaways declare any function beforehand
       stream: _firestore
