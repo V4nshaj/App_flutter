@@ -8,8 +8,9 @@ class AddTaskScreen extends StatefulWidget {
 }
 
 class _AddTaskScreenState extends State<AddTaskScreen> {
-  List<String> tasks = [];
-  final taskController = TextEditingController(); //controller for
+  List<String> _tasks = [];
+  final _taskController = TextEditingController(); //controller for
+
   @override
   void initState() {
     //state is called at the beginnning
@@ -23,13 +24,13 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
     print("init state called");
   }
 
-  void addTask() {
-    String newTask = taskController.text; // Get the entered text
+  void _addTask() {
+    String newTask = _taskController.text; // Get the entered text
     if (newTask.isNotEmpty) {
       // Check if the text is not empty
       setState(() {
-        tasks.add(newTask); // Add the task to the list
-        taskController.clear(); // Clear the text field
+        _tasks.add(newTask); // Add the task to the list
+        _taskController.clear(); // Clear the text field
       });
     }
   }
@@ -65,7 +66,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   autofocus:
                       true, //as soon as the taskfield opens it opens the keyboard without clicking on the textfield
                   textAlign: TextAlign.center,
-                  controller: taskController,
+                  controller: _taskController,
                   decoration: InputDecoration(
                       enabledBorder: const UnderlineInputBorder(
                         borderSide: const BorderSide(
@@ -83,9 +84,9 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 ),
               ),
               SizedBox(
-                height: 50.0,
+                height: 20.0,
               ),
-              add_button(),
+              add_button(onTaskAdded: _addTask),
             ],
           )),
     );

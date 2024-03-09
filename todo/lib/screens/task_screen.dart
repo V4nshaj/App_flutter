@@ -27,7 +27,7 @@ class TaskScreen extends StatelessWidget {
                   true, // it changes the bottom screen to cover the whole screen
 
               builder: (BuildContext context) => SingleChildScrollView(
-                  //makes keyboard just below the button, gemini has another method
+                  //makes keyboard just below the button
                   child: Container(
                       padding: EdgeInsets.only(
                           bottom: MediaQuery.of(context).viewInsets.bottom),
