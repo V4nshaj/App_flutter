@@ -22,13 +22,13 @@ class Paramov extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //welcomeScreen.id associate with Welcomescreen as string name can be misspelled but id never changes
-      initialRoute: WelcomeScreen
+      initialRoute: LoginScreen
           .id, //initial route is defined as / bcz home is not consider if inital route is defined
       routes: {
-        WelcomeScreen.id: (context) => WelcomeScreen(),
-        StartupScreen.id: (context) => StartupScreen(),
         LoginScreen.id: (context) => LoginScreen(),
+        WelcomeScreen.id: (context) => WelcomeScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
+        StartupScreen.id: (context) => StartupScreen(),
         VitalScreen.id: (context) => VitalScreen(
               user: '',
             ),

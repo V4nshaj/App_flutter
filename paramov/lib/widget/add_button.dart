@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class add_button extends StatelessWidget {
-  const add_button({
-    super.key,
-  });
-
+class AddButton extends StatelessWidget {
+  final String text;
+  final double width;
+  final double height;
+  VoidCallback onTap;
+  AddButton(
+      {required this.text,
+      required this.width,
+      required this.height,
+      required this.onTap});
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -14,18 +19,20 @@ class add_button extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           // color: Colors.white,
-          color: Colors.deepPurple,
-          borderRadius: BorderRadius.circular(20.0),
+          color: const Color.fromARGB(255, 155, 106, 239),
+          borderRadius: BorderRadius.circular(10.0),
         ),
-        width: MediaQuery.of(context).size.width * 0.8, //screen size 80 % width
-        padding: EdgeInsets.symmetric(vertical: 10.0),
+        width:
+            MediaQuery.of(context).size.width * width, //screen size 80 % width
+        height: MediaQuery.of(context).size.width * height,
+        padding: EdgeInsets.symmetric(vertical: 5.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Get Started',
+              text,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 20.0),
+              style: TextStyle(color: Colors.white, fontSize: 15.0),
             ),
           ],
         ),

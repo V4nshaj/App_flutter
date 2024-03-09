@@ -13,7 +13,7 @@ class VitalScreen extends StatefulWidget {
   final String user;
   VitalScreen({required this.user});
 
-  static const String id = 'Registration_screen';
+  static const String id = 'Vital_screen';
 
   @override
   _ChatScreenState createState() => _ChatScreenState();
