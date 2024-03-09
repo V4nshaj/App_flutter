@@ -4,8 +4,12 @@ import 'package:todo/widgets/task_checkbox.dart';
 class TaskTile extends StatelessWidget {
   final bool isChecked;
   final String taskTitle;
+  final Function(bool?) checkboxCallBack;
 
-  TaskTile({required this.isChecked, required this.taskTitle});
+  TaskTile(
+      {required this.isChecked,
+      required this.taskTitle,
+      required this.checkboxCallBack});
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -19,13 +23,9 @@ class TaskTile extends StatelessWidget {
             : null, // No style applied when unchecked
       ),
       trailing: TaskCheckBox(
-          checkboxState: isChecked), //, toggleCheckboxState: isChecked
+          checkboxState: isChecked,
+          toggleCheckboxState:
+              checkboxCallBack), //, toggleCheckboxState: isChecked
     );
   }
 }
-
-// void checkboxCallBack(bool? checkboxState) {
-//   setState(() {
-//     isChecked = checkboxState!;
-//   });
-// }
