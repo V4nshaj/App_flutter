@@ -1,24 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:todo/widgets/task_checkbox.dart';
 
-class TaskTile extends StatefulWidget {
-  @override
-  State<TaskTile> createState() => _TasktileState();
-}
+class TaskTile extends StatelessWidget {
+  final bool isChecked;
+  final String taskTitle;
 
-class _TasktileState extends State<TaskTile> {
-  bool isChecked = false;
-  void checkboxCallBack(bool? checkboxState) {
-    setState(() {
-      isChecked = checkboxState!;
-    });
-  }
-
+  TaskTile({required this.isChecked, required this.taskTitle});
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        'This is a task',
+        taskTitle,
         style: isChecked
             ? TextStyle(
                 // Apply strikethrough when checked
@@ -27,7 +19,13 @@ class _TasktileState extends State<TaskTile> {
             : null, // No style applied when unchecked
       ),
       trailing: TaskCheckBox(
-          checkboxState: isChecked, toggleCheckboxState: checkboxCallBack),
+          checkboxState: isChecked), //, toggleCheckboxState: isChecked
     );
   }
 }
+
+// void checkboxCallBack(bool? checkboxState) {
+//   setState(() {
+//     isChecked = checkboxState!;
+//   });
+// }
