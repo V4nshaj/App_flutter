@@ -35,14 +35,6 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
     }
   }
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    // taskController.dispose();
-    print("Dispose callled");
-  }
-
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xff757575),
