@@ -10,8 +10,7 @@ class add_button extends StatelessWidget {
     return InkWell(
       //creates clickable areas i.e increases to touch area
       onTap: () {
-        onPressed:
-        onTaskAdded;
+        onTaskAdded();
       },
       child: Container(
         width: MediaQuery.of(context).size.width * 0.8, //screen size 80 % width
