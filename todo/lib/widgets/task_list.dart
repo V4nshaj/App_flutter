@@ -18,6 +18,7 @@ class TaskListState extends State<TaskList> {
         //provider access values, fuction, variable
         //child helps to access widgets dont need to be rebuild
         return ListView.builder(
+          shrinkWrap: true,
           itemBuilder: (context, index) {
             return TaskTile(
               isChecked: provider.task[index].isDone,
@@ -25,11 +26,16 @@ class TaskListState extends State<TaskList> {
               checkboxCallBack: (checkboxState) {
                 print(provider.task[index].name);
                 provider.toggleTaskStatus(index);
+                if (provider.task[index].isDone) {
+                  Future.delayed(Duration(seconds: 2), () {
+                    provider.removetask(index);
+                  });
+                }
               },
-              onDelete: () {
-                var provider = Provider.of<AppData>(context, listen: false);
-                provider.removetask(index);
-              },
+              // onDelete: () {
+              //   var provider = Provider.of<AppData>(context, listen: false);
+              //   provider.removetask(index);
+              // },
             );
           },
           itemCount: provider.task.length,

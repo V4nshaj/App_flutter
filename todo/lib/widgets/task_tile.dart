@@ -9,12 +9,13 @@ class TaskTile extends StatelessWidget {
   final bool isChecked;
   final String taskTitle;
   final Function(bool?) checkboxCallBack;
-  final VoidCallback onDelete;
-  TaskTile(
-      {required this.isChecked,
-      required this.taskTitle,
-      required this.checkboxCallBack,
-      required this.onDelete});
+  // final VoidCallback onDelete;
+  TaskTile({
+    required this.isChecked,
+    required this.taskTitle,
+    required this.checkboxCallBack,
+  });
+  // required this.onDelete,
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -31,11 +32,11 @@ class TaskTile extends StatelessWidget {
           checkboxState: isChecked,
           toggleCheckboxState:
               checkboxCallBack), //, toggleCheckboxState: isChecked
-      leading: IconButton(
-          onPressed: () {
-            onDelete();
-          },
-          icon: Icon(Icons.delete)),
+      // leading: IconButton(
+      //     onPressed: () {
+      //       onDelete();
+      //     },
+      //     icon: Icon(Icons.delete)),
     );
   }
 }
