@@ -97,11 +97,13 @@ class MessageStream extends StatelessWidget {
               as dynamic; //to access the data in async
           //async from steambuilder contains QuerySnapshot, QuerySnapshot contains document list
           var messageText;
+          var temperatureText;
           //typecasting object to String
           messageText = messages['data'];
-          int level1 = messageText;
-          int level = 1500;
-          int consumption = level - level1;
+          temperatureText = messages['vanshaj']['temperature'];
+          // int level1 = messageText;
+          // int level = 1500;
+          // int consumption = level - level1;
 
           return Container(
             margin: EdgeInsets.only(
@@ -112,7 +114,7 @@ class MessageStream extends StatelessWidget {
               children: [
                 Text(
                   'Water Level left in Bottle: ' +
-                      messageText.toString() +
+                      temperatureText.toString() +
                       ' ml',
                   style: TextStyle(
                     color: Colors.blue[800],
@@ -124,7 +126,8 @@ class MessageStream extends StatelessWidget {
                   height: 30.0,
                 ),
                 Text(
-                  'Water consumed: ' + consumption.toString() + ' ml',
+                  'Water consumed: ' + messageText.toString() + ' ml',
+                  // 'Water consumed: ' + consumption.toString() + ' ml',
                   style: TextStyle(
                     color: Colors.blue[800],
                     fontWeight: FontWeight.bold,

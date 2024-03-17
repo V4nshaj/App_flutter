@@ -5,13 +5,17 @@ import 'package:aqua_trail/screens/welcome_screen.dart';
 import 'package:aqua_trail/screens/login_screen.dart';
 import 'package:aqua_trail/screens/registration_screen.dart';
 import 'package:aqua_trail/screens/chat_screen.dart';
+import 'components/notification_service.dart'; // Import notification_service.dart
 
 void main() async {
   WidgetsFlutterBinding
       .ensureInitialized(); //some platform integration features may not be available until the binding has been initialized.
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await notificationService
+      .initializeNotifications(); // Call initializeNotifications
   runApp(FlashChat());
 }
 
