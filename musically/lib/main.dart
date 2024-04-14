@@ -3,6 +3,7 @@ import 'package:musically/components/notification_service.dart';
 import 'package:musically/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:musically/screens/home_screen.dart';
 import 'package:musically/screens/music_screen.dart';
 import 'package:musically/screens/startup_screen.dart';
 import 'package:musically/screens/splash_screen.dart';
@@ -36,9 +37,10 @@ class Musically extends StatelessWidget {
           navigatorKey, //if in no screen then it helps in navigation getting context if out stateful widget
       debugShowCheckedModeBanner: false,
       //SplashScreen.id associate with Splashscreen as string name can be misspelled but id never changes
-      initialRoute: MusicScreen
+      initialRoute: HomeScreen
           .id, //initial route is defined as / bcz home is not consider if inital route is defined
       routes: {
+        HomeScreen.id: (context) => HomeScreen(),
         MusicScreen.id: (context) => MusicScreen(),
         SplashScreen.id: (context) => SplashScreen(),
         StartupScreen.id: (context) => StartupScreen(),

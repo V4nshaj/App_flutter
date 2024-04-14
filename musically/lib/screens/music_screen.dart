@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:musically/components/notification_service.dart';
+import 'package:musically/components/text_design.dart';
 import 'package:musically/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:musically/components/Nmethod.dart';
@@ -35,6 +36,7 @@ class _MusicScreenState extends State<MusicScreen> {
   bool isShuffleOn = false;
   bool isRepeatOn = false;
   bool isRepeatAll = true;
+  bool _isPressed = false;
 
   String _formatDuration(Duration duration) {
     DateTime dateTime = DateTime(1970).add(duration);
@@ -107,23 +109,21 @@ class _MusicScreenState extends State<MusicScreen> {
                 IconButton(
                   icon: Icon(
                     CupertinoIcons.arrow_left_circle_fill,
-                    color: Colors.grey,
+                    // color: Colors.grey,
                     size: 25,
                   ),
                   onPressed: () {},
                 ),
-                Text(
-                  "You're listening", //${MyName}
-                  style: GoogleFonts.quintessential(
-                    textStyle:
-                        TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),
-                  ),
-                  textAlign: TextAlign.start,
+                SizedBox(
+                  width: 67.0,
+                ),
+                heading2("You're listening"),
+                SizedBox(
+                  width: 67.0,
                 ),
                 IconButton(
                   icon: Icon(
                     Icons.pending_outlined,
-                    color: Colors.grey,
                     size: 25,
                   ),
                   onPressed: () {},
@@ -131,7 +131,7 @@ class _MusicScreenState extends State<MusicScreen> {
               ],
             ),
             SizedBox(
-              height: 20.0,
+              height: 40.0,
             ),
             Container(
               height: 350.0,
@@ -143,42 +143,36 @@ class _MusicScreenState extends State<MusicScreen> {
             ),
             SizedBox(height: 20.0),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Blinding Lights",
-                      style: GoogleFonts.quintessential(
-                        textStyle: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.w600),
-                      ),
-                    ),
+                    heading2('Blinding Lights'),
                     SizedBox(height: 10.0),
-                    Text(
-                      "The Weekend",
-                      style: GoogleFonts.quintessential(
-                        textStyle: TextStyle(
-                            fontSize: 10.0, fontWeight: FontWeight.w600),
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
+                    light_text(lighttext: 'The Weeknd')
                   ],
                 ),
                 SizedBox(
-                  width: 50.0,
+                  width: 60.0,
                 ),
                 IconButton(
                   icon: Icon(
-                    CupertinoIcons.heart_fill,
-                    color: Colors.red,
+                    _isPressed ? Icons.favorite : Icons.favorite_border,
+                    color: _isPressed ? Colors.red : null,
                     size: 25,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      _isPressed = !_isPressed;
+                    });
+                  },
                 ),
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
                   icon: Icon(isRepeatOn
@@ -191,8 +185,8 @@ class _MusicScreenState extends State<MusicScreen> {
                 IconButton(
                   icon: Icon(
                     Icons.skip_previous_rounded,
-                    color: Colors.grey,
-                    size: 50,
+                    color: Colors.grey.shade600,
+                    size: 40,
                   ),
                   onPressed: () {},
                 ),
@@ -201,23 +195,23 @@ class _MusicScreenState extends State<MusicScreen> {
                     isPlaying
                         ? CupertinoIcons.pause_circle_fill
                         : CupertinoIcons.play_circle_fill,
-                    color: Colors.pink,
-                    size: 50,
+                    color: Colors.purpleAccent,
+                    size: 70,
                   ),
                   onPressed: togglePlayPause,
                 ),
                 IconButton(
                   icon: Icon(
                     Icons.skip_next_rounded,
-                    color: Colors.grey,
-                    size: 50,
+                    color: Colors.grey.shade600,
+                    size: 40,
                   ),
                   onPressed: () {},
                 ),
                 IconButton(
                   icon: Icon(isShuffleOn
-                      ? CupertinoIcons.shuffle
-                      : Icons.shuffle_on_rounded),
+                      ? Icons.shuffle_on_rounded
+                      : CupertinoIcons.shuffle),
                   onPressed: toggleShuffle,
                 ),
               ],
@@ -230,7 +224,7 @@ class _MusicScreenState extends State<MusicScreen> {
                   style: TextStyle(fontSize: 16),
                 ),
                 Container(
-                  width: 300.0,
+                  width: 280.0,
                   child: SliderTheme(
                     data: SliderThemeData(
                       thumbShape:
@@ -238,9 +232,9 @@ class _MusicScreenState extends State<MusicScreen> {
                       trackHeight: 3.0,
                     ),
                     child: Slider(
-                      thumbColor: Color.fromARGB(255, 236, 61, 175),
-                      activeColor: Color.fromARGB(255, 236, 61, 175),
-                      inactiveColor: Color.fromARGB(255, 209, 98, 183),
+                      thumbColor: Colors.purpleAccent,
+                      activeColor: Colors.purpleAccent,
+                      inactiveColor: Colors.purpleAccent.shade100,
                       value: _currentTime,
                       min: 0,
                       max: _totalDuration,
@@ -258,64 +252,55 @@ class _MusicScreenState extends State<MusicScreen> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 30.0,
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Column(
                   children: [
                     IconButton(
                       icon: Icon(
                         CupertinoIcons.person_alt_circle_fill,
-                        color: Colors.grey,
+                        // color: Colors.grey.shade600,
                         size: 25,
                       ),
                       onPressed: () {},
                     ),
-                    Text(
-                      "Artist",
-                      style: GoogleFonts.quintessential(
-                        textStyle: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.w600),
-                      ),
-                    ),
+                    text_def('Artist')
                   ],
+                ),
+                SizedBox(
+                  width: 10.0,
                 ),
                 Column(
                   children: [
                     IconButton(
                       icon: Icon(
                         CupertinoIcons.gear_alt_fill,
-                        color: Colors.grey,
+                        // color: Colors.grey,
                         size: 25,
                       ),
                       onPressed: () {},
                     ),
-                    Text(
-                      "Settings",
-                      style: GoogleFonts.quintessential(
-                        textStyle: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.w600),
-                      ),
-                    ),
+                    text_def('Settings')
                   ],
+                ),
+                SizedBox(
+                  width: 10.0,
                 ),
                 Column(
                   children: [
                     IconButton(
                       icon: Icon(
                         CupertinoIcons.music_albums_fill,
-                        color: Colors.grey,
+                        // color: Colors.grey,
                         size: 25,
                       ),
                       onPressed: () {},
                     ),
-                    Text(
-                      "Libraary",
-                      style: GoogleFonts.quintessential(
-                        textStyle: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.w600),
-                      ),
-                    ),
+                    text_def("Library")
                   ],
                 ),
               ],
