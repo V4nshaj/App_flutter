@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'screens/signin_screen.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+    return MaterialApp(
+        navigatorKey: navigatorKey,
+        initialRoute: SigninScreen.id,
+        routes: {
+          SigninScreen.id: (context) => SigninScreen(),
+          SplashScreen.id: (context) => SplashScreen(),
+          // HomeScreen.id: (context) => HomeScreen(),
+        });
   }
 }
